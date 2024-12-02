@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Casa e Jardim</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Casa e Jardim</div>
+            <div class="search-bar">
+                <input type="text" placeholder="O que você procura?">
+                <button>🔍</button>
+            </div>
+            <div class="header-icons">
+                <a href="#"><img src="https://via.placeholder.com/30" alt="Carrinho" id="cart-icon"></a>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrossel -->
+    <section class="carousel">
+        <div class="carousel-container">
+            <img src="https://via.placeholder.com/1200x400/ff7f7f" alt="Promoção 1">
+            <img src="https://via.placeholder.com/1200x400/7fffd4" alt="Promoção 2">
+            <img src="https://via.placeholder.com/1200x400/6495ed" alt="Promoção 3">
+        </div>
+        <button class="prev-btn">❮</button>
+        <button class="next-btn">❯</button>
+    </section>
+
+    <!-- Produtos -->
+    <section class="products">
+        <h2>Produtos em Destaque</h2>
+        <div class="product-list">
+            <div class="product-item" data-name="Produto 1" data-price="99.90">
+                <img src="https://via.placeholder.com/200" alt="Produto 1">
+                <h3>Produto 1</h3>
+                <p>R$ 99,90</p>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product-item" data-name="Produto 2" data-price="149.90">
+                <img src="https://via.placeholder.com/200" alt="Produto 2">
+                <h3>Produto 2</h3>
+                <p>R$ 149,90</p>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product-item" data-name="Produto 3" data-price="199.90">
+                <img src="https://via.placeholder.com/200" alt="Produto 3">
+                <h3>Produto 3</h3>
+                <p>R$ 199,90</p>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Casa e Jardim. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
