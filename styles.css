@@ -1,106 +1,354 @@
-/* styles.css */
+/* Estilo do Body */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f3f3f3;
+    color: #333;
 }
+
 
 header {
-    background: #4CAF50;
-    color: white;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #486c44;
+    color: white;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Garantir que o padding não cause overflow */
 }
 
-.header-container {
+.logo img {
+    width: 120px; /* Ajuste o tamanho da largura conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    cursor: pointer; /* Faz a imagem ser clicável, se necessário */
+}
+
+header nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    flex-grow: 1; /* Ajusta para ocupar o espaço disponível */
 }
 
-.search-bar input {
-    padding: 5px;
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
-.search-bar button {
-    background: #333;
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
     color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #FFD700;
+}
+
+header .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem; /* Adiciona um pequeno espaçamento entre o nav e a busca */
+}
+
+header .search-container input {
+    padding: 0.5rem;
     border: none;
-    padding: 5px 10px;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem; /* Ajusta o espaço entre o input e o botão */
 }
 
-.header-icons {
-    position: relative;
-}
-
-#cart-count {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 5px;
-    font-size: 0.8em;
-}
-
-.carousel {
-    position: relative;
-}
-
-.carousel-container img {
-    width: 100%;
-    display: none;
-}
-
-.carousel-container img:first-child {
-    display: block;
-}
-
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+header .search-container button {
+    background: none;
     border: none;
-    font-size: 2em;
+    color: white;
     cursor: pointer;
 }
 
-.prev-btn {
-    left: 10px;
+
+/* Estilo do Carrossel */
+.banner {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
 }
 
-.next-btn {
-    right: 10px;
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Isso garante que a imagem cubra toda a área sem distorções */
 }
 
-.products {
-    padding: 20px;
+
+/* Estilos gerais para a galeria de produtos */
+.product-gallery {
+    padding: 2rem;
     text-align: center;
 }
 
+.product-gallery h2 {
+    color: #228B22;
+    margin-bottom: 1rem;
+}
+
+/* Layout do carrossel com rolagem horizontal */
 .product-list {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
 }
 
-.product-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
+.product-list::-webkit-scrollbar {
+    height: 8px;
+}
+
+.product-list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.product-list::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Estilos para cada card de produto */
+.product-card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 18%;
+    padding: 1rem;
     text-align: center;
-    width: 200px;
-    cursor: pointer;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
 }
 
-.product-item img {
-    max-width: 100%;
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para o preço, nome e quantidade */
+.product-card .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: #333;
+}
+
+.product-card .product-name {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    color: #666;
+}
+
+/* Estilos para o seletor de quantidade */
+.quantity-selector {
+    margin-top: 1rem;
+}
+
+.quantity-selector select {
+    padding: 0.25rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+/* Estilos para o botão de comprar */
+.buy-btn {
+    background-color: #228B22;
+    color: #fff;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.buy-btn:hover {
+    background-color: #1d7e1d;
+}
+
+/* Estilo para a mensagem de feedback */
+.cart-feedback {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    z-index: 1000;
+}
+.showcase-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.showcase-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.showcase-container p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.showcase-product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.showcase-product-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.showcase-product-image {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.showcase-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+}
+
+.showcase-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.showcase-overlay p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.showcase-btn {
+    background-color: #ff6f00;
+    color: white;
+    padding: 10px 20px;
     border-radius: 5px;
+    text-decoration: none;
+}
+
+.showcase-view-all-btn {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ff6f00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.showcase-view-all-btn:hover, .showcase-btn:hover {
+    background-color: #e65c00;
+}
+
+/* Estilo do botão do carrinho */
+.cart-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cart-btn img {
+    width: 30px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .cart-btn:hover img {
+    transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
+  }
+  
+
+
+/* Estilo do Footer */
+footer {
+    background-color: #228B22;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .footer-section {
+    margin: 1rem 0;
+    flex: 1 1 30%;
+}
+
+footer .footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .footer-section ul li a:hover {
+    text-decoration: underline;
 }

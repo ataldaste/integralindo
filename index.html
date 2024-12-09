@@ -3,74 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Casa e Jardim</title>
+    <title>PlantaVerde</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="header-container">
-            <div class="logo">Casa e Jardim</div>
-            <div class="search-bar">
-                <input type="text" placeholder="O que você procura?">
-                <button>🔍</button>
+
+<header>
+    <div class="logo">
+    <img src="/images/warren smith.png" alt="PlantaVerde">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="search-container">
+        <input type="text" placeholder="Pesquisar...">
+        <button class="cart-btn">
+            <img src="/images/shopping-cart.png" alt="Carrinho de Compras">
+          </button>
+          
+    </div>
+</header>   
+    <main>
+        <!-- Plantas em Destaque (Banner Estático) -->
+        <section class="section">
+            <h2>Plantas em Destaque</h2>
+            <div class="banner">
+                <img src="https://images.tcdn.com.br/img/img_prod/762187/1686006715_banners_topo_home_plantas.jpg" alt="Plantas em Destaque">
             </div>
-            <div class="header-icons">
-                <a href="#"><img src="https://via.placeholder.com/30" alt="Carrinho" id="cart-icon"></a>
-                <span id="cart-count">0</span>
+        </section>
+
+        <!-- Categorias -->
+        <section class="section">
+            <div class="category-list">
+                <div class="category-item">
+                    <!-- Carrossel de Plantas de Interior -->
+                    <section class="product-gallery">
+                        <h2>Novidades</h2>
+                        <div class="product-list">
+                            <div class="product-card">
+                                <img src="/images/ananas-champaca-m14 (1).jpg" alt="Ananas Champaca">
+                                <p class="price">R$999,99</p>
+                                <p class="product-name">Ananas Champaca</p>
+                                <div class="quantity-selector">
+                                    <label for="quantity1">Quantidade:</label>
+                                    <select id="quantity1" name="quantity1">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <button class="buy-btn" onclick="addToCart('Ananas Champaca', 999.99, document.getElementById('quantity1').value)">Comprar</button>
+                            </div>
+        
+                            <div class="product-card">
+                                <img src="/images/calathea-crocata-tassmania-m14 (1).jpg" alt="Calathea Crocata">
+                                <p class="price">R$999,99</p>
+                                <p class="product-name">Calathea Crocata</p>
+                                <div class="quantity-selector">
+                                    <label for="quantity2">Quantidade:</label>
+                                    <select id="quantity2" name="quantity2">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <button class="buy-btn" onclick="addToCart('Calathea Crocata', 999.99, document.getElementById('quantity2').value)">Comprar</button>
+                            </div>
+        
+                            <div class="product-card">
+                                <img src="/images/coco-nucifera-m19- (1).jpg" alt="Coco Nucifera">
+                                <p class="price">R$299,99</p>
+                                <p class="product-name">Coco Nucifera</p>
+                                <div class="quantity-selector">
+                                    <label for="quantity3">Quantidade:</label>
+                                    <select id="quantity3" name="quantity3">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <button class="buy-btn" onclick="addToCart('Coco Nucifera', 299.99, document.getElementById('quantity3').value)">Comprar</button>
+                            </div>
+        
+                            <div class="product-card">
+                                <img src="/images/dieffenbachia-camila-c17 (1).jpg" alt="Dieffenbachia Camila">
+                                <p class="price">R$149,99</p>
+                                <p class="product-name">Dieffenbachia Camila</p>
+                                <div class="quantity-selector">
+                                    <label for="quantity4">Quantidade:</label>
+                                    <select id="quantity4" name="quantity4">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <button class="buy-btn" onclick="addToCart('Dieffenbachia Camila', 149.99, document.getElementById('quantity4').value)">Comprar</button>
+                            </div>
+        
+                            <div class="product-card">
+                                <img src="/images/dracena-marginata-bicolor-c20 (1).jpg" alt="Dracena Marginata">
+                                <p class="price">R$699,99</p>
+                                <p class="product-name">Dracena Marginata</p>
+                                <div class="quantity-selector">
+                                    <label for="quantity5">Quantidade:</label>
+                                    <select id="quantity5" name="quantity5">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <button class="buy-btn" onclick="addToCart('Dracena Marginata', 699.99, document.getElementById('quantity5').value)">Comprar</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
+        </section>
+        
+                    
+        <section class="product-gallery">
+            <h2>Plantas do Exterior</h2>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="/images/monstera-andasonii-m12-16 (1).jpg" alt="Monstera Andasonii">
+                    <p class="price">R$99,99</p>
+                    <p class="product-name">Monstera Andasonii</p>
+                    <div class="quantity-selector">
+                        <label for="quantity1">Quantidade:</label>
+                        <select id="quantity1" name="quantity1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button class="buy-btn" onclick="addToCart('Monstera Andasonii', 99.99, document.getElementById('quantity1').value)">Comprar</button>
+                </div>
+        
+                <div class="product-card">
+                    <img src="/images/sansevieria-cylindrica-m14 (1).jpg" alt="Sansevieria Cylindrica">
+                    <p class="price">R$149,99</p>
+                    <p class="product-name">Sansevieria Cylindrica</p>
+                    <div class="quantity-selector">
+                        <label for="quantity2">Quantidade:</label>
+                        <select id="quantity2" name="quantity2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button class="buy-btn" onclick="addToCart('Sansevieria Cylindrica', 149.99, document.getElementById('quantity2').value)">Comprar</button>
+                </div>
+        
+                <div class="product-card">
+                    <img src="/images/sansevieria-laurentii-m17-70cm (1).jpg" alt="Sansevieria Laurentii">
+                    <p class="price">R$199,99</p>
+                    <p class="product-name">Sansevieria Laurentii</p>
+                    <div class="quantity-selector">
+                        <label for="quantity3">Quantidade:</label>
+                        <select id="quantity3" name="quantity3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button class="buy-btn" onclick="addToCart('Sansevieria Laurentii', 199.99, document.getElementById('quantity3').value)">Comprar</button>
+                </div>
+        
+                <div class="product-card">
+                    <img src="/images/schefflera-gold-capella-c17- (1).jpg" alt="Schefflera Gold Capella">
+                    <p class="price">R$199,99</p>
+                    <p class="product-name">Schefflera Gold Capella</p>
+                    <div class="quantity-selector">
+                        <label for="quantity4">Quantidade:</label>
+                        <select id="quantity4" name="quantity4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button class="buy-btn" onclick="addToCart('Schefflera Gold Capella', 199.99, document.getElementById('quantity4').value)">Comprar</button>
+                </div>
+        
+                <div class="product-card">
+                    <img src="/images/sansevieria-laurentii-m17-70cm (1).jpg" alt="Sansevieria Laurentii (Outros)">
+                    <p class="price">R$199,99</p>
+                    <p class="product-name">Sansevieria Laurentii (Outros)</p>
+                    <div class="quantity-selector">
+                        <label for="quantity5">Quantidade:</label>
+                        <select id="quantity5" name="quantity5">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button class="buy-btn" onclick="addToCart('Sansevieria Laurentii (Outros)', 199.99, document.getElementById('quantity5').value)">Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase-container">
+            <h2>Uma enorme variedade de plantas e produtos</h2>
+            <p>Viva o Verde é uma empresa completa de fornecimento de produtos para cuidar de plantas e jardins. Oferecemos soluções líderes de mercado para cuidados com o gramado, plantas, flores e jardins.</p>
+            <div class="showcase-product-list">
+                <div class="showcase-product-card">
+                    <div class="showcase-product-image" style="background-image: url('/images/humus.webp');">
+                        <div class="showcase-overlay">
+                            <h3>Humus de Minhoca</h3>
+                            <p>Produto 100% natural, poderoso restaurador de solo que ajuda na prevenção contra doenças...</p>
+                            <a href="#" class="showcase-btn">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-product-card">
+                    <div class="showcase-product-image" style="background-image: url('/images/esterco-all-garden-107enq38dh.webp');">
+                        <div class="showcase-overlay">
+                            <h3>Esterco Bovino</h3>
+                            <p>Adubo 100% orgânico, rico em nutrientes como Nitrogênio, Fósforo e Potássio...</p>
+                            <a href="#" class="showcase-btn">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-product-card">
+                    <div class="showcase-product-image" style="background-image: url('/images/substrato.jfif');">
+                        <div class="showcase-overlay">
+                            <h3>Substrato</h3>
+                            <p>Composição: solo à base de turfa levemente adubada. Ideal para plantas que necessitam de menos água...</p>
+                            <a href="#" class="showcase-btn">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-product-card">
+                    <div class="showcase-product-image" style="background-image: url('/images/argila.webp');">
+                        <div class="showcase-overlay">
+                            <h3>Argila Expandida</h3>
+                            <p>Produto destinado para drenagem de vasos para decoração de superfície...</p>
+                            <a href="#" class="showcase-btn">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <h3>Sobre Nós</h3>
+            <p>Somos apaixonados por plantas e por transformar ambientes.</p>
         </div>
-        <nav>
+        <div class="footer-section">
+            <h3>Links Úteis</h3>
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Produtos</a></li>
                 <li><a href="#">Contato</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <!-- Carrossel -->
-    <section class="carousel">
-        <div class="carousel-container">
-            <img src="https://via.placeholder.com/1200x400/ff7f7f" alt="Promoção 1">
-            <img src="https://via.placeholder.com/1200x400/7fffd4" alt="Promoção 2">
-            <img src="https://via.placeholder.com/1200x400/6495ed" alt="Promoção 3">
         </div>
-        <button class="prev-btn">❮</button>
-        <button class="next-btn">❯</button>
-    </section>
-
-    <!-- Produtos -->
-    <section class="products">
-        <h2>Produtos em Destaque</h2>
-        <div class="product-list">
-            <div class="product-item" data-name="Produto 1" data-price="99.90">
-                <img src="https://via.placeholder.com/200" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <p>R$ 99,90</p>
-                <button class="add-to-cart">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item" data-name="Produto 2" data-price="149.90">
-                <img src="https://via.placeholder.com/200" alt="Produto 2">
-                <h3>Produto 2</h3>
-                <p>R$ 149,90</p>
-                <button class="add-to-cart">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item" data-name="Produto 3" data-price="199.90">
-                <img src="https://via.placeholder.com/200" alt="Produto 3">
-                <h3>Produto 3</h3>
-                <p>R$ 199,90</p>
-                <button class="add-to-cart">Adicionar ao Carrinho</button>
-            </div>
+        <div class="footer-section">
+            <h3>Redes Sociais</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
         </div>
-    </section>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 Casa e Jardim. Todos os direitos reservados.</p>
     </footer>
-
+    <div id="cart-feedback" class="cart-feedback"></div>
     <script src="script.js"></script>
 </body>
 </html>
